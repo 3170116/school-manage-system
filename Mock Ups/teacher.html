@@ -9,11 +9,10 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-
+        
         <script src='https://kit.fontawesome.com/a076d05399.js'></script>
 
-        <title>Προφίλ</title>
-
+        <title>Καθηγητές</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="icon" href="https://i.pinimg.com/originals/37/86/00/3786001447986993c2cd5bbfe77c9645.png" />
 
@@ -68,7 +67,7 @@
 
             .grid-item {
                 margin: auto;
-                width: fit-content;
+                width: max-content;
             }
 
             .h2 {
@@ -160,6 +159,10 @@
                 min-width: 5em;
             }
 
+            .teacher-form {
+                width: 580px;
+            }
+
             thead > tr > th {
                 text-align: center;
             }
@@ -186,7 +189,7 @@
     </head>
 
     <body>
-
+        
         <div class="main-page">
 
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -256,79 +259,51 @@
                 </div>
             </div>
 
-            <div class="row pd-15">
-                <div class="col-sm-12 text-center h2">
-                    Ωρολόγιο Πρόγραμμα Διδασκαλίας
-                </div>
-            </div>
-            
-            <nav>
-                <div class="nav nav-tabs grid-5" id="nav-tab" role="tablist">
-                    <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#Monday" role="tab" aria-controls="nav-home" aria-selected="true">Δευτέρα</a>
-                    <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#Tuesday" role="tab" aria-controls="nav-profile" aria-selected="false">Τρίτη</a>
-                    <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#Wednesnday" role="tab" aria-controls="nav-contact" aria-selected="false">Τετάρτη</a>
-                    <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#Thursday" role="tab" aria-controls="nav-contact" aria-selected="false">Πέμπτη</a>
-                    <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#Friday" role="tab" aria-controls="nav-contact" aria-selected="false">Παρασκευή</a>
-                </div>
-            </nav>
+            <form class="grid-1">
+                <div class="box grid-item teacher-form">
 
-            <div class="tab-content">
-                <div class="tab-pane fade show active" id="Monday" role="tabpanel" aria-labelledby="home-tab">
+                    <div class="form-group grid-item">
+                        <label>Όνομα</label>
+                        <input type="text" class="form-control">
+                    </div>
 
-                    <div class="table-responsive-lg">
-                        <table class="table">
+                    <div class="form-group grid-item">
+                        <label>Επίθετο</label>
+                        <input type="text" class="form-control">
+                    </div>
 
-                            <table class="table table-hover">
+                    <div class="form-group grid-item">
+                        <label>Email</label>
+                        <input type="text" class="form-control">
+                    </div>
 
-                                <thead>
-                                    <tr>
-                                        <th class="sticky-col" scope="col"></th>
-                                        <th scope="col">1</th>
-                                        <th scope="col">2</th>
-                                        <th scope="col">3</th>
-                                        <th scope="col">4</th>
-                                        <th scope="col">5</th>
-                                        <th scope="col">6</th>
-                                        <th scope="col">7</th>
-                                    </tr>
-                                </thead>
+                    <div class="form-group grid-item">
+                        <label>Ημερομηνία γένησσης</label>
+                        <input type="text" class="form-control">
+                    </div>
 
-                                <tbody>
-                                <tr>
-                                    <th class="sticky-col" scope="row">Διαμαντίδης</th>
-                                    
-                                    <td><strong>Β2</strong><br>Τεχνολογία Λογισμικού</td>
+                    <div class="form-group grid-item">
+                        <label>Ειδικότητα</label>
+                        <input type="text" class="form-control">
+                    </div>
 
-                                    <td></td>
-                                    <td><strong>A1</strong><br>Άλγεβρα</td>
-                                    <td></td>
-                                </tr>
-                                <tr>
+                    <div class="form-group grid-item">
+                        <label>Μέγιστος αριθμός ωρών διδασκαλίας ανά ημέρα</label>
+                        <input type="text" class="form-control">
+                    </div>
 
-                                    <th class="sticky-col" scope="row">Κωτίδης</th>
-                                    
-                                    <td></td>
-                                    <td><strong>Β3</strong><br>Σχεδίαση Βάσεων Δεδομένων</td>
-                                </tr>
-                                <tr>
-                                    <th class="sticky-col" scope="row">Βασσάλος</th>
-                                    
-                                </tr>
-                                </tbody>
+                    <div class="form-group grid-item">
+                        <label>Μέγιστος αριθμός ωρών διδασκαλίας ανά εβδομάδα</label>
+                        <input type="text" class="form-control">
+                    </div>
 
-                              </table>
-                          
-                        </table>
-                      </div>
+                    <div class="form-group grid-item">
+                        <input type="submit" class="grid-item btn btn-success" value="Υποβολή" />
+                    </div>
+                    <br>
 
                 </div>
-
-
-                <div class="tab-pane fade" id="Tuesday" role="tabpanel" aria-labelledby="profile-tab">T</div>
-                <div class="tab-pane fade" id="Wednesnday" role="tabpanel" aria-labelledby="contact-tab">w</div>
-                <div class="tab-pane fade" id="Thursday" role="tabpanel" aria-labelledby="contact-tab">T</div>
-                <div class="tab-pane fade" id="Friday" role="tabpanel" aria-labelledby="contact-tab">F</div>
-            </div>
+            </form>
 
         </div>
         
@@ -351,6 +326,7 @@
             window.onresize = hideManageMenuItem;
             //refresh the menu when page loads
             hideManageMenuItem();
+
         }
     </script>
 

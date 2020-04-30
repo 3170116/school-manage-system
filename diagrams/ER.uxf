@@ -70,8 +70,8 @@ hoursPerWeek: Integer</panel_attributes>
     <coordinates>
       <x>20</x>
       <y>210</y>
-      <w>200</w>
-      <h>110</h>
+      <w>180</w>
+      <h>130</h>
     </coordinates>
     <panel_attributes>Absences
 -
@@ -79,7 +79,8 @@ id: Integer
 studentId: Integer
 teachingHourid: Integer
 justified: boolean
-studentIsInClassroom: boolean</panel_attributes>
+isPunishment: boolean
+date: datetime</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -88,13 +89,14 @@ studentIsInClassroom: boolean</panel_attributes>
       <x>560</x>
       <y>740</y>
       <w>220</w>
-      <h>110</h>
+      <h>130</h>
     </coordinates>
     <panel_attributes>Grades
 -
 id: Integer
 studentId: Integer
 courseId: Integer
+teacherId: Integer
 grade: float
 semester: Integer</panel_attributes>
     <additional_attributes/>
@@ -113,23 +115,8 @@ id: Integer
 teacherId: Integer
 classroomId: Integer
 courseId: Integer
-from: dateTime
-to: dateTime</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>270</x>
-      <y>700</y>
-      <w>180</w>
-      <h>60</h>
-    </coordinates>
-    <panel_attributes>CertificatesPerStudent
--
-studentId: Integer
-certificateId: Integer
-</panel_attributes>
+day: Integer
+hour: Integer</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -265,7 +252,7 @@ aparts from &gt;</panel_attributes>
       <h>50</h>
     </coordinates>
     <panel_attributes>lt=-
-m1=1..n
+m1=1
 m2=1..n
 teaches at &gt;</panel_attributes>
     <additional_attributes>10.0;20.0;120.0;20.0</additional_attributes>
@@ -307,7 +294,7 @@ m2=1..n</panel_attributes>
     </coordinates>
     <panel_attributes>lt=-
 m1=1..n
-m2=1..n</panel_attributes>
+m2=1</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;360.0</additional_attributes>
   </element>
   <element>
@@ -319,7 +306,7 @@ m2=1..n</panel_attributes>
       <h>40</h>
     </coordinates>
     <panel_attributes>lt=-
-m1=1..n
+m1=1
 m2=1..n</panel_attributes>
     <additional_attributes>140.0;10.0;10.0;10.0</additional_attributes>
   </element>
@@ -329,27 +316,27 @@ m2=1..n</panel_attributes>
       <x>350</x>
       <y>590</y>
       <w>70</w>
-      <h>130</h>
+      <h>270</h>
     </coordinates>
     <panel_attributes>lt=-
 m1=1..n
-m2=1..n
+m2=1
 has &gt;</panel_attributes>
-    <additional_attributes>10.0;110.0;10.0;10.0</additional_attributes>
+    <additional_attributes>10.0;250.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>80</x>
-      <y>310</y>
+      <y>330</y>
       <w>140</w>
-      <h>230</h>
+      <h>210</h>
     </coordinates>
     <panel_attributes>lt=-
 m1=1
 m2=1..n
 &lt; has</panel_attributes>
-    <additional_attributes>120.0;200.0;10.0;200.0;10.0;10.0</additional_attributes>
+    <additional_attributes>120.0;180.0;10.0;180.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
@@ -414,20 +401,6 @@ date: dateTime
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>350</x>
-      <y>750</y>
-      <w>70</w>
-      <h>110</h>
-    </coordinates>
-    <panel_attributes>lt=-
-m1=1..n
-m2=1..n
-has &gt;</panel_attributes>
-    <additional_attributes>10.0;90.0;10.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
       <x>1260</x>
       <y>260</y>
       <w>150</w>
@@ -442,7 +415,7 @@ belongs to &gt;</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>30</x>
+      <x>20</x>
       <y>740</y>
       <w>210</w>
       <h>100</h>
@@ -458,16 +431,16 @@ unjustifiedSummary: Integer</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>120</x>
+      <x>110</x>
       <y>560</y>
-      <w>100</w>
+      <w>110</w>
       <h>200</h>
     </coordinates>
     <panel_attributes>lt=-
 m1=1
 m2=1
 &lt; has</panel_attributes>
-    <additional_attributes>80.0;20.0;10.0;20.0;10.0;180.0</additional_attributes>
+    <additional_attributes>90.0;20.0;10.0;20.0;10.0;180.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
@@ -549,5 +522,18 @@ m2=1..n</panel_attributes>
 m1=1..n
 m2=1..n</panel_attributes>
     <additional_attributes>410.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>490</x>
+      <y>270</y>
+      <w>90</w>
+      <h>540</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=1..n</panel_attributes>
+    <additional_attributes>50.0;10.0;10.0;10.0;10.0;510.0;70.0;510.0</additional_attributes>
   </element>
 </diagram>
