@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+
+    <title>Καθηγητές</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" href="https://i.pinimg.com/originals/37/86/00/3786001447986993c2cd5bbfe77c9645.png" />
+
+    <link rel="stylesheet" href="~/css/style.css" />
+    <script type="text/javascript" src="~/js/teacher.js"></script>
+</head>
+
+<body>
+
+    <div class="main-page">
+
+        @Html.Partial("~/Views/Shared/NavigationMenu.cshtml")
+
+        <div class="row pd-15">
+            <div class="col-sm-12 text-right">
+                <label>Σύνδεση ως: </label> <label>Δημήτρης Μπεκιάρης <a><i class="fa fa-sign-out"></i></a></label>
+            </div>
+        </div>
+
+        <form class="grid-1">
+            <div class="box grid-item teacher-form">
+
+                <div class="form-group grid-item">
+                    <label>Όνομα</label>
+                    <input type="text" class="form-control">
+                </div>
+
+                <div class="form-group grid-item">
+                    <label>Επίθετο</label>
+                    <input type="text" class="form-control">
+                </div>
+
+                <div class="form-group grid-item">
+                    <label>Email</label>
+                    <input type="text" class="form-control">
+                </div>
+
+                <div class="form-group grid-item">
+                    <label>Ημερομηνία γένησσης</label>
+                    <input type="text" class="form-control">
+                </div>
+
+                <div class="form-group grid-item">
+                    <label>Ειδικότητα</label>
+                    <input type="text" class="form-control">
+                </div>
+
+                <div class="form-group grid-item">
+                    <label>Μέγιστος αριθμός ωρών διδασκαλίας ανά ημέρα</label>
+                    <input type="text" class="form-control">
+                </div>
+
+                <div class="form-group grid-item">
+                    <label>Μέγιστος αριθμός ωρών διδασκαλίας ανά εβδομάδα</label>
+                    <input type="text" class="form-control">
+                </div>
+
+                <div class="form-group grid-item">
+                    <input type="submit" class="grid-item btn btn-success" value="Υποβολή" />
+                </div>
+                <br>
+
+            </div>
+        </form>
+
+    </div>
+
+</body>
+
+</html>

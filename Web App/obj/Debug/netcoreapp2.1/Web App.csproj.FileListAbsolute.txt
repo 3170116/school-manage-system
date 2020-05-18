@@ -21,3 +21,30 @@ C:\Users\db\Desktop\school-manage-system\Web App\obj\Debug\netcoreapp2.1\Web App
 C:\Users\db\Desktop\school-manage-system\Web App\obj\Debug\netcoreapp2.1\Web App.dll
 C:\Users\db\Desktop\school-manage-system\Web App\obj\Debug\netcoreapp2.1\Web App.pdb
 C:\Users\db\Desktop\school-manage-system\Web App\obj\Debug\netcoreapp2.1\Web App.csproj.CopyComplete
+C:\Users\Jimis\Desktop\school-manage-system\Web App\bin\Debug\netcoreapp2.1\appsettings.Development.json
+C:\Users\Jimis\Desktop\school-manage-system\Web App\bin\Debug\netcoreapp2.1\appsettings.json
+C:\Users\Jimis\Desktop\school-manage-system\Web App\bin\Debug\netcoreapp2.1\Properties\launchSettings.json
+C:\Users\Jimis\Desktop\school-manage-system\Web App\bin\Debug\netcoreapp2.1\Web App.deps.json
+C:\Users\Jimis\Desktop\school-manage-system\Web App\bin\Debug\netcoreapp2.1\Web App.runtimeconfig.json
+C:\Users\Jimis\Desktop\school-manage-system\Web App\bin\Debug\netcoreapp2.1\Web App.runtimeconfig.dev.json
+C:\Users\Jimis\Desktop\school-manage-system\Web App\bin\Debug\netcoreapp2.1\Web App.dll
+C:\Users\Jimis\Desktop\school-manage-system\Web App\bin\Debug\netcoreapp2.1\Web App.pdb
+C:\Users\Jimis\Desktop\school-manage-system\Web App\bin\Debug\netcoreapp2.1\Web App.Views.dll
+C:\Users\Jimis\Desktop\school-manage-system\Web App\bin\Debug\netcoreapp2.1\Web App.Views.pdb
+C:\Users\Jimis\Desktop\school-manage-system\Web App\obj\Debug\netcoreapp2.1\Web App.csprojAssemblyReference.cache
+C:\Users\Jimis\Desktop\school-manage-system\Web App\obj\Debug\netcoreapp2.1\Web App.RazorAssemblyInfo.cache
+C:\Users\Jimis\Desktop\school-manage-system\Web App\obj\Debug\netcoreapp2.1\Web App.RazorAssemblyInfo.cs
+C:\Users\Jimis\Desktop\school-manage-system\Web App\obj\Debug\netcoreapp2.1\Web App.AssemblyInfoInputs.cache
+C:\Users\Jimis\Desktop\school-manage-system\Web App\obj\Debug\netcoreapp2.1\Web App.AssemblyInfo.cs
+C:\Users\Jimis\Desktop\school-manage-system\Web App\obj\Debug\netcoreapp2.1\Web App.TagHelpers.input.cache
+C:\Users\Jimis\Desktop\school-manage-system\Web App\obj\Debug\netcoreapp2.1\Web App.TagHelpers.output.cache
+C:\Users\Jimis\Desktop\school-manage-system\Web App\obj\Debug\netcoreapp2.1\Web App.RazorCoreGenerate.cache
+C:\Users\Jimis\Desktop\school-manage-system\Web App\obj\Debug\netcoreapp2.1\Razor\Views\Home\Index.cshtml.g.cs
+C:\Users\Jimis\Desktop\school-manage-system\Web App\obj\Debug\netcoreapp2.1\Web App.RazorTargetAssemblyInfo.cache
+C:\Users\Jimis\Desktop\school-manage-system\Web App\obj\Debug\netcoreapp2.1\Web App.RazorTargetAssemblyInfo.cs
+C:\Users\Jimis\Desktop\school-manage-system\Web App\obj\Debug\netcoreapp2.1\Web App.Views.pdb
+C:\Users\Jimis\Desktop\school-manage-system\Web App\obj\Debug\netcoreapp2.1\Web App.dll
+C:\Users\Jimis\Desktop\school-manage-system\Web App\obj\Debug\netcoreapp2.1\Web App.pdb
+C:\Users\Jimis\Desktop\school-manage-system\Web App\obj\Debug\netcoreapp2.1\Web App.csproj.CopyComplete
+C:\Users\Jimis\Desktop\school-manage-system\Web App\obj\Debug\netcoreapp2.1\Razor\Views\Home\profile.cshtml.g.cs
+C:\Users\Jimis\Desktop\school-manage-system\Web App\obj\Debug\netcoreapp2.1\Razor\Views\Shared\NavigationMenu.cshtml.g.cs

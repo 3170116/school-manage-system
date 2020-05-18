@@ -13,5 +13,15 @@ namespace Web_App.Controllers
         {
             return View();
         }
+
+        public IActionResult Profile()
+        {
+            return View("Profile");
+        }
+
+        public IActionResult Teacher()
+        {
+            return View("Teacher");
+        }
     }
 }
