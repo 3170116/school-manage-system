@@ -40,6 +40,7 @@ create table Teachers(
 	id int primary key,
     role varchar(32) not null,
     email varchar(64) not null,
+    password varchar(32) not null,
     firstName varchar(32) not null,
     lastName varchar(32) not null,
     dateOfBirth datetime not null,

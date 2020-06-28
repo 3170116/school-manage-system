@@ -1,0 +1,92 @@
+﻿@using WebApp.ViewModels
+@model ProfileViewModel
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+
+    <title>Προσωπικά Στοιχεία</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" href="https://i.pinimg.com/originals/37/86/00/3786001447986993c2cd5bbfe77c9645.png" />
+
+    <link rel="stylesheet" href="~/css/site.css" />
+    <script type="text/javascript" src="~/js/Views/Profile/profile.js"></script>
+
+</head>
+
+<body>
+
+    <div class="main-page">
+        @await Html.PartialAsync("~/Views/Shared/NavigationMenu.cshtml", Model)
+
+        <div class="row">
+            <div class="col-sm-12 text-right">
+                <label>Σύνδεση ως: </label> <label>@Model.FullName <a href="@Url.Action("LogOut","Home")"><i class="fa fa-sign-out"></i></a></label>
+            </div>
+        </div>
+
+        @using (Html.BeginForm("EditInfo", "Profile", FormMethod.Post))
+        {
+            <div class="row justify-content-center">
+                <div class="col-md-5 col-sm-8">
+
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                    <input type="hidden" name="Id" value="@Model.Teacher.Id" />
+                    <input type="hidden" name="Password" value="@Model.Teacher.Password" />
+                    <input type="hidden" name="Role" value="@Model.Teacher.Role" />
+
+                    <input type="text" name="FirstName" value="@Model.Teacher.FirstName" placeholder="Όνομα" class="form-control" />
+                    <br />
+
+                    <input type="text" name="LastName" value="@Model.Teacher.LastName" placeholder="Επώνυμο" class="form-control" />
+                    <br />
+
+                    <input type="text" name="Email" value="@Model.Teacher.Email" placeholder="email" class="form-control" />
+                    @if (ViewData["emailRequired"] != null && (bool)ViewData["emailRequired"] == true)
+                    {
+                        <label class="text-danger">This field is required*</label>
+                    }
+                    @if (ViewData["emailExists"] != null && (bool)ViewData["emailExists"] == true)
+                    {
+                        <label class="text-danger">Χρησιμοποιείται ήδη αυτό το email από άλλο χρήστη!</label>
+                    }
+                    <br />
+
+                    <input type="text" name="Speciality" value="@Model.Teacher.Speciality" placeholder="Ειδικότητα" class="form-control" />
+                    <br />
+
+                    <input type="datetime" name="DateOfBirth" value="@Model.Teacher.DateOfBirth" placeholder="Ημερομηνία γέννησης" class="form-control" />
+                    <br />
+
+                    <label class="h6">Ρόλος: @Model.Teacher.Role</label>
+
+                    <input type="submit" class="btn btn-success" value="Υποβολή" />
+
+                </div>
+            </div>
+        }
+
+        <br />
+        @using (Html.BeginForm("DeleteAccount", "Profile", FormMethod.Post))
+        {
+            <input type="submit" class="btn btn-sm btn-danger" value="Διαγραφή Λογαριασμού" />
+            <p>Αν πατήσετε το κουμπί ο λογαριασμός διαγράφεται αυτόματα!</p>
+        }
+
+    </div>
+
+</body>
+
+</html>

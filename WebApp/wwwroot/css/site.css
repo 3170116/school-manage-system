@@ -1,0 +1,144 @@
+﻿a:hover {
+    cursor: pointer;
+}
+
+body {
+    padding: 15px;
+}
+
+.btn-success {
+    width: 100%;
+    margin-top: 20px;
+    justify-content: center;
+}
+
+.dropdown-item:hover {
+    background-color: rgb(211, 208, 208);
+    cursor: pointer;
+}
+
+.dropdown-item:active {
+    background-color: rgb(240, 238, 238);
+}
+
+.hidden {
+    display: none;
+}
+
+#index-form {
+    margin-top: 30px;
+    height: 530px;
+}
+
+#index-logo {
+    margin: 50px auto 15px auto;
+    height: 110px;
+}
+
+.main-page {
+    width: 100%;
+    min-height: 1024px;
+    border-radius: 6px;
+    background-color: rgb(240, 238, 238);
+}
+
+nav {
+    overflow-x: scroll;
+}
+
+.nav-item > a {
+    font-size: 1.1em;
+    color: rgb(92, 92, 233);
+}
+
+.nav-link {
+    text-align: center;
+    color: black;
+    font-size: large;
+}
+
+.nav-link:hover {
+    cursor: pointer;
+    color: rgb(111, 111, 228);
+}
+
+.tab-pane {
+    margin: 0 auto;
+    width: 70%;
+}
+
+.nav-link.active {
+    background-color: rgb(225, 225, 225) !important;
+}
+
+.mg-top-10 {
+    margin-top: 10px;
+}
+
+.nav-link:hover {
+    cursor: pointer;
+    color: rgb(247, 247, 247);
+}
+
+.pd-5 {
+    padding: 5px;
+}
+
+.pd-15 {
+    padding: 15px;
+}
+
+.pointer:hover {
+    cursor: pointer;
+}
+
+#signUp-content {
+    padding: 10px;
+}
+
+.sticky-col {
+    position: sticky;
+    left: 0;
+    z-index: 2;
+    word-wrap: break-word;
+    max-width: 130px;
+    font-size: 0.9em;
+    background-color: rgb(240, 238, 238);
+}
+
+td {
+    text-align: center;
+}
+
+th, td {
+    max-width: 7em;
+    min-width: 5em;
+}
+
+.teacher-form {
+    width: 580px;
+}
+
+thead > tr > th {
+    text-align: center;
+}
+
+@media only screen and (min-width: 540px) {
+    nav {
+        overflow-x: initial;
+    }
+
+    table tr:nth-child(n+5) {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 420px) {
+    #logIn-content, #signUp-content {
+        width: 280px;
+    }
+
+    .form-control {
+        width: 240px;
+    }
+}
