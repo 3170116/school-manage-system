@@ -13,7 +13,6 @@ namespace WebApp.Controllers
 {
     public class HomeController : BaseController
     {
-        private readonly SMSContext storeDB;
 
         public HomeController(SMSContext _storeDB)
         {
@@ -94,8 +93,8 @@ namespace WebApp.Controllers
                     master.Role = "Master";
 
                     //αν υπάρχουν καθηγητές στην βάση, το Id παίρνει την επόμενη τιμή
-                    if (storeDB.Teacher.Count() != 0)
-                        master.Id = storeDB.Teacher.Select(x => x.Id).Max();
+                    if (storeDB.Teacher.Any())
+                        master.Id = storeDB.getNextTeacherId();
 
                     storeDB.Add(master);
                 }

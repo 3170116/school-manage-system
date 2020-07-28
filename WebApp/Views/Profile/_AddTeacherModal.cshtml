@@ -12,13 +12,71 @@
                 </button>
             </div>
 
-            <div class="modal-body">
-            
-            </div>
+            <form method="post" action="@Url.Action("Add","Teacher")">
 
-            <div class="modal-footer">
-                <button type="button" class="btn btn-success">Save changes</button>
-            </div>
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                <div class="modal-body">
+                    <div class="row justify-content-center">
+                        <div class="col-12">
+
+                            <label class="form-group">Προσωπικά Στοιχεία:</label>
+                            <br />
+
+                            @Html.TextBoxFor(x => x.FirstName, new { @class = "form-control", @placeholder = "Όνομα" })
+                            <br />
+
+                            @Html.TextBoxFor(x => x.LastName, new { @class = "form-control", @placeholder = "Επίθετο" })
+                            <br />
+
+                            <select name="Speciality" class="form-control">
+                                <option value="Φιλόλογος" selected>Φιλόλογος</option>
+                                <option value="Μαθηματικός">Μαθηματικός</option>
+                                <option value="Φυσικός">Φυσικός</option>
+                                <option value="Χημικός">Χημικός</option>
+                                <option value="Βιολόγος">Βιολόγος</option>
+                                <option value="Γυμναστής">Γυμναστής</option>
+                                <option value="Θεολόγος">Θεολόγος</option>
+                                <option value="Ιστορικός">Ιστορικός</option>
+                            </select>
+                            <br />
+
+                            @Html.TextBoxFor(x => x.DateOfBirth, new { @type = "datetime", @class = "form-control", @placeholder = "Ημερομηνία γέννησης" })
+                            <br />
+
+                            <select name="Role" class="form-control">
+                                <option value="TEACHER" selected>Καθηγητής</option>
+                                <option value="SUBMASTER">Υποδιευθυντής</option>
+                                <option value="MASTER">Διευθυντής</option>
+                            </select>
+                            <br />
+
+                            <hr />
+
+                            <label class="form-group">Στοιχεία πρόσβασης:</label>
+                            <br />
+
+                            <input type="email" class="form-control" placeholder="e-mail" name="Email" data-val="true" data-val-required="This field is required *" id="Email">
+                            <label data-valmsg-for="Email" data-valmsg-replace="true" class="text-danger"></label>
+                            <br />
+
+                            <input type="password" class="form-control" placeholder="password" name="Password" data-val="true" data-val-required="This field is required *" id="Password">
+                            <label data-valmsg-for="Password" data-valmsg-replace="true" class="text-danger"></label>
+                            <br />
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <div class="row">
+                        <div class="col-12">
+                            <input type="submit" class="btn btn-success" value="Προσθήκη καθηγητή" />
+                        </div>
+                    </div>
+                </div>
+
+            </form>
 
     </div>
   </div>

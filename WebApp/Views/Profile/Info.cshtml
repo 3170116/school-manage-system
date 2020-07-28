@@ -15,6 +15,10 @@
 
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.11/jquery.validate.unobtrusive.min.js"></script>
+
     <title>Προσωπικά Στοιχεία</title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -36,38 +40,37 @@
             </div>
         </div>
 
-        @using (Html.BeginForm("EditInfo", "Profile", FormMethod.Post))
-        {
+        <form method="post" action="@Url.Action("EditInfo","Profile")">
+
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
             <div class="row justify-content-center">
                 <div class="col-md-5 col-sm-8">
 
-                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    @*αυτά λογικά θα αφαιρεθούν*@
+                    <input type="hidden" name="Teacher.Id" value="@Model.Teacher.Id" />
+                    <input type="hidden" name="Teacher.Password" value="@Model.Teacher.Password" />
 
-                    <input type="hidden" name="Id" value="@Model.Teacher.Id" />
-                    <input type="hidden" name="Password" value="@Model.Teacher.Password" />
-                    <input type="hidden" name="Role" value="@Model.Teacher.Role" />
+                    <input type="hidden" name="Teacher.Role" value="@Model.Teacher.Role" />
 
-                    <input type="text" name="FirstName" value="@Model.Teacher.FirstName" placeholder="Όνομα" class="form-control" />
+                    <input type="text" name="Teacher.FirstName" value="@Model.Teacher.FirstName" placeholder="Όνομα" class="form-control" />
                     <br />
 
-                    <input type="text" name="LastName" value="@Model.Teacher.LastName" placeholder="Επώνυμο" class="form-control" />
+                    <input type="text" name="Teacher.LastName" value="@Model.Teacher.LastName" placeholder="Επώνυμο" class="form-control" />
                     <br />
 
-                    <input type="text" name="Email" value="@Model.Teacher.Email" placeholder="email" class="form-control" />
-                    @if (ViewData["emailRequired"] != null && (bool)ViewData["emailRequired"] == true)
-                    {
-                        <label class="text-danger">This field is required*</label>
-                    }
+                    <input type="email" class="form-control" placeholder="e-mail" value="@Model.Teacher.Email" name="Teacher.Email" data-val="true" data-val-required="This field is required *" id="Teacher_Email">
+                    <label data-valmsg-for="Teacher.Email" data-valmsg-replace="true" class="text-danger"></label>
                     @if (ViewData["emailExists"] != null && (bool)ViewData["emailExists"] == true)
                     {
                         <label class="text-danger">Χρησιμοποιείται ήδη αυτό το email από άλλο χρήστη!</label>
                     }
                     <br />
 
-                    <input type="text" name="Speciality" value="@Model.Teacher.Speciality" placeholder="Ειδικότητα" class="form-control" />
+                    <input type="text" name="Teacher.Speciality" value="@Model.Teacher.Speciality" placeholder="Ειδικότητα" class="form-control" />
                     <br />
 
-                    <input type="datetime" name="DateOfBirth" value="@Model.Teacher.DateOfBirth" placeholder="Ημερομηνία γέννησης" class="form-control" />
+                    <input type="datetime" name="Teacher.DateOfBirth" value="@Model.Teacher.DateOfBirth" placeholder="Ημερομηνία γέννησης" class="form-control" />
                     <br />
 
                     <label class="h6">Ρόλος: @Model.Teacher.Role</label>
@@ -76,7 +79,7 @@
 
                 </div>
             </div>
-        }
+        </form>
 
         <br />
         @using (Html.BeginForm("DeleteAccount", "Profile", FormMethod.Post))
@@ -86,6 +89,8 @@
         }
 
     </div>
+
+    @await Html.PartialAsync("~/Views/Profile/_AddTeacherModal.cshtml", new WebApp.Models.Teacher())
 
 </body>
 

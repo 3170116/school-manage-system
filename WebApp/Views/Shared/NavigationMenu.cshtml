@@ -1,5 +1,5 @@
 ﻿@using WebApp.ViewModels
-@model ProfileViewModel
+@model BaseViewModel
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
 
@@ -57,7 +57,7 @@
                             <a class="dropdown-item" data-toggle="modal" data-target="#AddTeacherModal"><i class="fa fa-plus"></i> Προσθήκη</a>
                         }
 
-                        <a class="dropdown-item"><i class="fa fa-plus"></i> Προβολή</a>
+                        <a href="@Url.Action("Index","Teacher")" class="dropdown-item"><i class="fa fa-plus"></i> Προβολή</a>
 
                         @if (Model.ShowModifyTeacherMenuItems)
                         {

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
@@ -33,7 +34,7 @@ namespace WebApp.Models
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseMySql("server=localhost;user=*;password=*;database=school_management_system", x => x.ServerVersion("8.0.19-mysql"));
+                optionsBuilder.UseMySql("server=localhost;user=root;password=dimitris_bek;database=school_management_system", x => x.ServerVersion("8.0.19-mysql"));
             }
         }
 
@@ -504,6 +505,11 @@ namespace WebApp.Models
             return Teacher.FirstOrDefaultAsync(x => x.Email.Equals(teacher.Email)).Result != null ? true : false;
         }
 
+        public int getNextTeacherId()
+        {
+            return Teacher.MaxAsync(x => x.Id).Result + 1;
+        }
+
         public Teacher GetTeacherById(int teacherId)
         {
             Teacher teacher = Teacher.FirstOrDefaultAsync(x => x.Id == teacherId).Result;
@@ -512,7 +518,6 @@ namespace WebApp.Models
                 return null;
 
             return Models.Teacher.getObjectByRole(teacher);
-
         }
 
         public void UpdateValues(Teacher newTeacher)

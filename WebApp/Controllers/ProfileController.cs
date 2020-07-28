@@ -11,7 +11,6 @@ namespace WebApp.Controllers
 {
     public class ProfileController : BaseController
     {
-        private readonly SMSContext storeDB;
 
         public ProfileController(SMSContext _storeDB)
         {
@@ -53,7 +52,7 @@ namespace WebApp.Controllers
 
         [HttpPost]
         [Route("Profile/EditInfo", Name = "EditInfo")]
-        public IActionResult EditInfo(Teacher editTeacher)
+        public IActionResult EditInfo(ProfileViewModel viewModel)
         {
             if (!storedUserIdInSessionExists())
                 return RedirectToAction("Index", "Home");
@@ -65,40 +64,32 @@ namespace WebApp.Controllers
 
             if (ModelState.IsValid)
             {
-                if (editTeacher == null)
+                if (viewModel.Teacher == null)
                 {
                     return RedirectToAction("Index", "Profile");
                 }
 
                 //επιβεβαίωση ότι το email της φόρμας δεν χρησιμοποιείται από άλλον χρήστη
-                if (editTeacher.Email != null && teacher.Email != editTeacher.Email)
+                if (viewModel.Teacher.Email != null && teacher.Email != viewModel.Teacher.Email)
                 {
-                    if (storeDB.ContainsAccountWithEmail(editTeacher.Email))
+                    if (storeDB.ContainsAccountWithEmail(viewModel.Teacher.Email))
                     {
                         ViewData["emailExists"] = true;
-                        ProfileViewModel viewModel = new ProfileViewModel(teacher);
+                        viewModel = new ProfileViewModel(teacher);
 
                         return View(viewModel);
                     }
                 }
 
                 //επιβεβαίωση ότι το id του καθηγητή στη φόρμα είναι το ίδιο με το id του καθηγητή από το session
-                if (teacher.Id == editTeacher.Id)
+                if (teacher.Id == viewModel.Teacher.Id)
                 {
-                    storeDB.UpdateValues(editTeacher);
+                    storeDB.UpdateValues(viewModel.Teacher);
                     storeDB.SaveChanges();
                 } else
                 {
                     return RedirectToAction("Index", "Profile");
                 }
-            }
-
-            if (String.IsNullOrEmpty(editTeacher.Email))
-            {
-                ViewData["emailRequired"] = true;
-                ProfileViewModel viewModel = new ProfileViewModel(teacher);
-
-                return View("Info",viewModel);
             }
 
             return RedirectToAction("Index", "Profile");

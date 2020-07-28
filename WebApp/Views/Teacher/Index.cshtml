@@ -1,0 +1,114 @@
+﻿@using WebApp.ViewModels
+@model TeacherViewModel
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.11/jquery.validate.unobtrusive.min.js"></script>
+
+    <title>Προφίλ</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" href="https://i.pinimg.com/originals/37/86/00/3786001447986993c2cd5bbfe77c9645.png" />
+
+    <link rel="stylesheet" href="~/css/site.css" />
+    <script type="text/javascript" src="~/js/Views/Profile/profile.js"></script>
+</head>
+
+<body>
+
+    <div class="main-page">
+
+        @await Html.PartialAsync("~/Views/Shared/NavigationMenu.cshtml", Model)
+
+        <div class="row pd-15">
+            <div class="col-sm-12 text-right">
+                <label>Σύνδεση ως: </label> <label>@Model.FullName <a href="@Url.Action("LogOut","Home")"><i class="fa fa-sign-out"></i></a></label>
+            </div>
+        </div>
+
+        <div class="pd-15">
+
+            <label class="h5">Σχολεία:</label>
+            <br />
+
+            @if (Model.TeachingSchools.Any())
+            {
+
+                <select class="form-control">
+                    @{ int i = 0; }
+                    @foreach (var school in Model.TeachingSchools)
+                    {
+                        <option value="@school.Id" @(i == 0 ? "checked" : "")>@(school.FullName + " " + school.Area)</option>
+                        i++;
+                    }
+                </select>
+                <br />
+
+                <div class="table-responsive">
+
+                    @foreach (var keypair in Model.TeachersPerSchoolDict)
+                    {
+                        <table class="table table-striped">
+
+                            <thead>
+                                <tr>
+                                    <th>
+                                        Όνομα
+                                    </th>
+                                    <th>
+                                        Επώνυμο
+                                    </th>
+                                    <th>
+                                        Ειδικότητα
+                                    </th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                @foreach (var teacher in keypair.Value)
+                                {
+                                    <tr>
+                                        <td>
+                                            @teacher.FirstName
+                                        </td>
+                                        <td>
+                                            @teacher.LastName
+                                        </td>
+                                        <td>
+                                            @teacher.Speciality
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+
+                        </table>
+                    }
+
+                </div>
+
+            }
+            else
+            {
+                <div class="alert-danger">Δεν υπάρχει κανένα σχολείο!</div>
+            }
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

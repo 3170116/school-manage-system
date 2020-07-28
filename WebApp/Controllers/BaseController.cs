@@ -4,12 +4,14 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using WebApp.Models;
 
 namespace WebApp.Controllers
 {
     public class BaseController : Controller
     {
 
+        protected SMSContext storeDB;
         protected int getUserIdFromSession()
         {
             if (HttpContext.Session.GetInt32("userId") == null)

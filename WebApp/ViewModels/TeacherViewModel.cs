@@ -6,16 +6,14 @@ using WebApp.Models;
 
 namespace WebApp.ViewModels
 {
-    public class ProfileViewModel: BaseViewModel
+    public class TeacherViewModel: BaseViewModel
     {
 
         public Teacher Teacher { get; set; }
 
-        public ProfileViewModel() { }
-
-        public ProfileViewModel(Teacher teacher)
+        public TeacherViewModel(Teacher teacher)
         {
-            Teacher = Teacher.getObjectByRole(teacher);
+            Teacher = teacher;
 
             ShowModifyTeacherMenuItems = Teacher.CanModifyTeacher();
             ShowDeleteTeacherMenuItem = Teacher.CanDeleteTeacher();
@@ -26,6 +24,8 @@ namespace WebApp.ViewModels
             FullName = Teacher.GetFullName();
         }
 
-        public string[][] SchoolProgram { get; set; }
+        public List<School> TeachingSchools { get; set; }
+
+        public Dictionary<int, List<Teacher>> TeachersPerSchoolDict { get; set; }
     }
 }

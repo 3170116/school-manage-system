@@ -398,3 +398,4 @@ C:\Users\Jimis\Desktop\school-manage-system\WebApp\bin\Debug\netcoreapp3.1\Syste
 C:\Users\Jimis\Desktop\school-manage-system\WebApp\obj\Debug\netcoreapp3.1\WebApp.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\Jimis\Desktop\school-manage-system\WebApp\obj\Debug\netcoreapp3.1\WebApp.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Jimis\Desktop\school-manage-system\WebApp\obj\Debug\netcoreapp3.1\Razor\Views\Profile\_AddTeacherModal.cshtml.g.cs
+C:\Users\Jimis\Desktop\school-manage-system\WebApp\obj\Debug\netcoreapp3.1\Razor\Views\Teacher\Index.cshtml.g.cs
